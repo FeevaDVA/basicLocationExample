@@ -74,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
         mLongitudeLabel = getResources().getString(R.string.longitude_label);
         mLatitudeText = (TextView) findViewById((R.id.latitude_text));
         mLongitudeText = (TextView) findViewById((R.id.longitude_text));
-
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
     }
 
@@ -83,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
 
         if (!checkPermissions()) {
-            //requestPermissions();
+            requestPermissions();
         } else {
             getLastLocation();
         }
